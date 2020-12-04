@@ -3,8 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="test.css">
-    <title>To-Do List</title>
+
+    <link rel="icon" href="favicon.ico" type="png" sizes="16x16">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+
+    <meta name="description" content="To Do  list that gets automatically saved in your browser" />
+	<meta name="keywords" content="productivity organization tasks free" />
+    <meta name="author" content="Pritisha Kumar" />
+    
+    <title>Your To-Do List</title>
 </head>
 <body>
     <h1>To-Do List</h1>
@@ -16,14 +26,14 @@
         <hr />
     <form action="">
         <input type="text" id="addText" placeholder="New item" autofocus />
-        <button id="addBut">Add</button>
+        <button id="addBut"><i class="fas fa-pencil-alt"></i></button>
         <hr />
         <ul id="list">
-            <!-- ... -->
+            <!--List items to be inserted here-->
         </ul>
     </form>
     </section>
     
-    <script src="test.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

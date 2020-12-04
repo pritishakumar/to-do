@@ -1,0 +1,41 @@
+body{
+    margin-left:20px;
+    font-family: 'Patrick Hand', cursive;
+    background-image: linear-gradient(rgba(238, 230, 114, 1),rgba(238, 186, 114, 1));
+    height:95vh;
+}
+
+h1 {
+    text-decoration: blue underline;
+}
+
+hr {
+    border-top: 1px solid blue;
+  }
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 5px 0px;
+    border-bottom: 1px solid blue;
+}
+
+input, button, .check {
+    border-radius: 5px;
+}
+
+button {
+    color: blue;
+}
+
+#addBut {
+    height: 20px;
+}
+
+.complete {
+    text-decoration: line-through;
+}

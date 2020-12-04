@@ -29,12 +29,14 @@ function addItem(lineText, opt) {
 	but new items are created on page content load, from 
 	last session*/
 	let newLi = document.createElement('li');
-	newLi.innerText = lineText + '  ';
+	//add some extra space between text and button
+	newLi.innerText = lineText + '  '; 
 	newLi.id = counter;
 	counter++;
 
 	let newCheckbox = document.createElement('input');
 	newCheckbox.setAttribute('type', 'checkbox');
+	newCheckbox.classList.add("check");
 	newLi.prepend(newCheckbox);
 	if (!!opt) {
 		let newObj = {};
@@ -44,7 +46,7 @@ function addItem(lineText, opt) {
 
 	let newDelBut = document.createElement('button');
 	newDelBut.className = 'delBut';
-	newDelBut.innerHTML = 'X';
+	newDelBut.innerHTML = '<i class="fas fa-trash"></i>';
 	newLi.appendChild(newDelBut);
 
 	list.appendChild(newLi);
@@ -57,7 +59,7 @@ function updateArray(bool, index) {
 	let line = document.getElementById(index);
 	let checkbox = line.querySelector('input');
 	let rawText = line.innerText;
-	let cutText = rawText.slice(0, rawText.length - 2);
+	let cutText = rawText.slice(0, rawText.length - 1);
 
 	if (bool) {
 		// info localStorage/backup array -> page
@@ -130,9 +132,9 @@ list.addEventListener('click', function(event) {
 
 // Delete List Item Button
 list.addEventListener('click', function(event) {
-	if (event.target.className === 'delBut') {
+	if (event.target.parentElement.className === 'delBut'  || event.target.className === 'delBut') {
 		event.preventDefault();
-		let line = event.target.parentElement;
+		let line = event.target.parentElement.parentElement;
 		backup[line.id] = null;
 		localStorage.setItem('backup', JSON.stringify(backup));
 		line.remove();
